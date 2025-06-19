@@ -1,0 +1,21 @@
+---
+layout: page
+title: Writing
+---
+
+<h2>Writing</h2>
+
+<p>Articles, posts, and thoughts with markdown and LaTeX support.</p>
+
+{% assign sorted_writing = site.writing | sort: 'date' | reverse %}
+{% for post in sorted_writing %}
+<article>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    {% if post.description %}
+    <p>{{ post.description }}</p>
+    {% endif %}
+    {% if post.date %}
+    <time>{{ post.date | date: "%B %d, %Y" }}</time>
+    {% endif %}
+</article>
+{% endfor %} 
