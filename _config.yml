@@ -6,9 +6,6 @@ email: "your.email@example.com"
 url: "https://andrewcai31.github.io" # Replace with your actual URL
 baseurl: "" # the subpath of your site, e.g. /blog
 
-
-theme: no-style-please
-
 # Build settings
 markdown: kramdown
 highlighter: rouge

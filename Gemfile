@@ -1,11 +1,17 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3.0"
+gem "github-pages", group: :jekyll_plugins
 gem "jekyll-seo-tag"
 gem "jekyll-feed"
 gem "jekyll-sitemap"
 gem "kramdown"
 gem "kramdown-math-katex"
+
+group :jekyll_plugins do
+  gem "jekyll-seo-tag"
+  gem "jekyll-feed"
+  gem "jekyll-sitemap"
+end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
