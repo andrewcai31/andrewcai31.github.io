@@ -3,8 +3,8 @@ title: "My Simple Website"
 description: "A minimalist website built with Jekyll and the no-style-please theme"
 author: "Your Name"
 email: "your.email@example.com"
-url: "https://yourusername.github.io" # Replace with your actual URL
-baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://andrewcai31.github.io" # Replace with your actual URL
+baseurl: "/webs" # the subpath of your site, e.g. /blog
 
 # Build settings
 markdown: kramdown
