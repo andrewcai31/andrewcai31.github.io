@@ -1,0 +1,277 @@
+---
+layout: default
+title: Writings
+---
+
+<h1>writings</h1>
+
+<p>This is where I'll share my thoughts and writings.</p>
+
+<div class="writings-list">
+  {% assign sorted_writings = site.writings | sort: 'date' | reverse %}
+  {% assign writings_by_year = sorted_writings | group_by_exp: "writing", "writing.date | date: '%Y'" %}
+  
+  {% for year_group in writings_by_year %}
+  <div class="year-section">
+    <h3 class="year-toggle" onclick="toggleYear('{{ year_group.name }}')">
+      {{ year_group.name }} <span class="toggle-icon">▼</span>
+    </h3>
+    <div class="year-content" id="year-{{ year_group.name }}">
+      <ul>
+        {% for writing in year_group.items %}
+        <li>
+          <span class="writing-date">{{ writing.date | date: "%-m/%-d/%y" }}:</span>
+          <a href="#" class="writing-link" data-url="{{ writing.url }}">{{ writing.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Pop-up overlay -->
+<div id="writing-popup" class="popup-overlay">
+  <div class="popup-content">
+    <div class="popup-header">
+      <h2 id="popup-title"></h2>
+      <button class="popup-close" onclick="closePopup()">&times;</button>
+    </div>
+    <div id="popup-body"></div>
+  </div>
+</div>
+
+<style>
+.year-section {
+  margin-bottom: 20px;
+}
+
+.year-toggle {
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+  font-family: inherit;
+  color: inherit;
+  font-size: 1.2em;
+}
+
+.year-toggle:hover {
+  opacity: 0.7;
+}
+
+.toggle-icon {
+  font-size: 0.8em;
+  margin-left: 10px;
+  transition: transform 0.2s ease;
+}
+
+.year-content {
+  display: block;
+  margin-left: 20px;
+}
+
+.year-content.collapsed {
+  display: none;
+}
+
+.year-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-family: inherit; /* Inherit site font */
+}
+
+.year-content li {
+}
+
+.writing-date {
+  margin-right: 5px;
+  font-family: inherit;
+  color: inherit;
+}
+
+.writing-link {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.writing-link:hover {
+  color: #004499;
+}
+
+.writing-link:visited,
+.writing-link.visited {
+  color: #660099;
+}
+
+.writing-link:active {
+  color: red;
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  font-family: inherit; /* Inherit site font */
+  color: inherit; /* Inherit site color */
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.popup-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.popup-close:hover {
+  color: #000;
+}
+
+.date-separator {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 15px 0;
+}
+</style>
+
+<script>
+function toggleYear(year) {
+  const content = document.getElementById('year-' + year);
+  const toggle = content.previousElementSibling;
+  const icon = toggle.querySelector('.toggle-icon');
+  
+  if (content.classList.contains('collapsed')) {
+    content.classList.remove('collapsed');
+    icon.textContent = '▼';
+  } else {
+    content.classList.add('collapsed');
+    icon.textContent = '▶';
+  }
+}
+
+// Initialize with all years expanded and set up pop-up functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const yearContents = document.querySelectorAll('.year-content');
+  yearContents.forEach(content => {
+    content.classList.remove('collapsed');
+  });
+  
+  const writingLinks = document.querySelectorAll('.writing-link');
+  
+  // Load visited links from localStorage
+  const visitedLinks = JSON.parse(localStorage.getItem('visitedLinks') || '[]');
+  
+  writingLinks.forEach(link => {
+    const url = link.getAttribute('data-url');
+    if (visitedLinks.includes(url)) {
+      link.classList.add('visited');
+    }
+    
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const url = this.getAttribute('data-url');
+      loadWriting(url);
+      this.classList.add('visited');
+      
+      // Save to localStorage
+      if (!visitedLinks.includes(url)) {
+        visitedLinks.push(url);
+        localStorage.setItem('visitedLinks', JSON.stringify(visitedLinks));
+      }
+    });
+  });
+});
+
+function loadWriting(url) {
+  fetch(url)
+    .then(response => response.text())
+    .then(html => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      
+      const article = doc.querySelector('article');
+      if (article) {
+        const title = article.querySelector('h1')?.textContent || 'Writing';
+        // Clone the article to avoid modifying the original
+        const contentNode = article.cloneNode(true);
+        // Remove the H1 from the cloned node to avoid duplicate title
+        const titleNode = contentNode.querySelector('h1');
+        if (titleNode) {
+          titleNode.parentNode.removeChild(titleNode);
+        }
+        
+        document.getElementById('popup-title').textContent = title;
+        document.getElementById('popup-body').innerHTML = contentNode.innerHTML;
+        
+        // Re-render LaTeX in the popup
+        if (typeof renderMathInElement !== 'undefined') {
+          renderMathInElement(document.getElementById('popup-body'), {
+            delimiters: [
+                {left: "\\(", right: "\\)", display: false},
+                {left: "\\[", right: "\\]", display: true}
+            ],
+            throwOnError: false
+          });
+        }
+      } else {
+        document.getElementById('popup-title').textContent = 'Error';
+        document.getElementById('popup-body').innerHTML = 'Content not found.';
+      }
+      
+      document.getElementById('writing-popup').style.display = 'block';
+    })
+    .catch(error => {
+      console.error('Error loading writing:', error);
+      document.getElementById('popup-title').textContent = 'Error';
+      document.getElementById('popup-body').innerHTML = 'Failed to load content.';
+      document.getElementById('writing-popup').style.display = 'block';
+    });
+}
+
+function closePopup() {
+  document.getElementById('writing-popup').style.display = 'none';
+}
+
+// Close popup when clicking outside of it
+document.getElementById('writing-popup').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closePopup();
+  }
+});
+
+// Close popup with Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closePopup();
+  }
+});
+</script>
+
+<p><a href="/">← Back to home</a></p> 

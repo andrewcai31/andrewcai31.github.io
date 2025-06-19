@@ -1,8 +1,8 @@
 # Site settings
-title: "My Simple Website"
-description: "A minimalist website built with Jekyll and the no-style-please theme"
-author: "Andrew Cai"
-email: "your.email@example.com"
+title: "andrew cai"
+description: "my little website"
+author: "andrew cai"
+email: "andrewcai31@gmail.com"
 url: "https://andrewc.ai"
 baseurl: ""
 
@@ -22,12 +22,9 @@ permalink: /:title/
 
 # Collections
 collections:
-  things:
+  writings:
     output: true
-    permalink: /things/:name/
-  writing:
-    output: true
-    permalink: /writing/:name/
+    permalink: /writings/:name/
 
 # Plugins
 plugins:

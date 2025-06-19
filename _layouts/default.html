@@ -19,12 +19,11 @@
 <body>
     <div class="container">
         <header>
-            <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+            <h1><a href="{{ '/' | relative_url }}">home</a></h1>
             <nav>
-                <a href="{{ '/' | relative_url }}">Home</a>
-                <a href="{{ '/info/' | relative_url }}">Info</a>
-                <a href="{{ '/things/' | relative_url }}">Things</a>
-                <a href="{{ '/writing/' | relative_url }}">Writing</a>
+                <a href="{{ '/library/' | relative_url }}">library</a>
+                <a href="{{ '/projects/' | relative_url }}">projects</a>
+                <a href="{{ '/writings/' | relative_url }}">writings</a>
             </nav>
         </header>
         
@@ -33,7 +32,7 @@
         </main>
         
         <footer>
-            <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}. Powered by <a href="https://jekyllrb.com/">Jekyll</a>.</p>
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}.</p>
         </footer>
     </div>
     
@@ -42,8 +41,8 @@
         document.addEventListener("DOMContentLoaded", function() {
             renderMathInElement(document.body, {
                 delimiters: [
-                    {left: "$$", right: "$$", display: true},
-                    {left: "$", right: "$", display: false}
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true}
                 ],
                 throwOnError: false
             });
