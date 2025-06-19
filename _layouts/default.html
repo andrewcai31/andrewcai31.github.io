@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
     
@@ -18,23 +17,25 @@
     {% feed_meta %}
 </head>
 <body>
-    <header>
-        <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-        <nav>
-            <a href="{{ '/' | relative_url }}">Home</a>
-            <a href="{{ '/info/' | relative_url }}">Info</a>
-            <a href="{{ '/things/' | relative_url }}">Things</a>
-            <a href="{{ '/writing/' | relative_url }}">Writing</a>
-        </nav>
-    </header>
-    
-    <main>
-        {{ content }}
-    </main>
-    
-    <footer>
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}. Powered by <a href="https://jekyllrb.com/">Jekyll</a>.</p>
-    </footer>
+    <div class="container">
+        <header>
+            <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+            <nav>
+                <a href="{{ '/' | relative_url }}">Home</a>
+                <a href="{{ '/info/' | relative_url }}">Info</a>
+                <a href="{{ '/things/' | relative_url }}">Things</a>
+                <a href="{{ '/writing/' | relative_url }}">Writing</a>
+            </nav>
+        </header>
+        
+        <main>
+            {{ content }}
+        </main>
+        
+        <footer>
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}. Powered by <a href="https://jekyllrb.com/">Jekyll</a>.</p>
+        </footer>
+    </div>
     
     <!-- Initialize KaTeX auto-render -->
     <script>
