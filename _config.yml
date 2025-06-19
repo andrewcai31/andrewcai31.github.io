@@ -4,7 +4,7 @@ description: "A minimalist website built with Jekyll and the no-style-please the
 author: "Your Name"
 email: "your.email@example.com"
 url: "https://andrewcai31.github.io" # Replace with your actual URL
-baseurl: "/webs" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 
 # Build settings
 markdown: kramdown
