@@ -1,7 +1,7 @@
 # Site settings
 title: "My Simple Website"
 description: "A minimalist website built with Jekyll and the no-style-please theme"
-author: "Your Name"
+author: "andrew cai"
 email: "your.email@example.com"
 url: "https://andrewcai31.github.io" # Replace with your actual URL
 baseurl: "" # the subpath of your site, e.g. /blog
