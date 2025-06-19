@@ -4,8 +4,8 @@ source "https://rubygems.org"
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 gem "github-pages", group: :jekyll_plugins
 
-# Theme
-gem "no-style-please"
+# Remote theme support for GitHub Pages
+gem "jekyll-remote-theme"
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"

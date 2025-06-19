@@ -6,8 +6,8 @@ email: "your.email@example.com"
 url: "https://andrewc.ai"
 baseurl: ""
 
-# Theme
-theme: no-style-please
+# Remote theme (GitHub Pages compatible)
+remote_theme: riggraz/no-style-please
 
 # Theme configuration
 theme_config:
@@ -33,6 +33,7 @@ collections:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 # Exclude from processing
 exclude:
