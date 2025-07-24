@@ -12,8 +12,8 @@ am i regretful? perhaps, but it's no use to dwell on it. i'm pretty confident i 
 
 so here's some stuff i did:
 - spent a semester with pkt
-- lift weights. get injured. wait three months. lift weights. get injured. wait three months. lift weights?
-- go on 39 flights (so far)
+- lifted weights. got injured. waited three months. lifted weights. got injured. waited three months. lifting weights?
+- went on 39 flights (so far)
 - turned 21
 - struggled a lot with motivation
 - networked :(
