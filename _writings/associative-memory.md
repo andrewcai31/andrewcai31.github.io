@@ -32,7 +32,7 @@ $$
 
 In fact, we can represent $E = -\displaystyle\sum_{\mu=1}^K F\left(\displaystyle\sum_{i=1}^n \xi_i^\mu \sigma_i\right)$ where $F(x) = x^n$. In the hopfield network case, $n = 2$.
 
-now, $K^\textrm{max} \approx 2^{\frac{D}{2}}$for the right energy functions.
+now, $K^\textrm{max} \approx 2^{\frac{D}{2}}$ for the right energy functions.
 
 let’s talk about the energy descent update rule.
 
@@ -49,11 +49,10 @@ now let’s examine why dense associative memory can store so many memories (com
 - take $\xi^\mu$ as $\pm 1$ vectors with 50% probability. Then, let’s figure out how many memories we can store by finding the number of local minima possible — so the update would be constant. initialize $\sigma_i^{(0)} = \xi_i^1$, then we want to find the probability that
     
     
-    $$
-    \sigma_i^{(t+1)} = \textrm{Sign} \left[\xi_i^1 f(D-1) + \sum_{\mu = 2}^K \xi_i^\mu f\left(\sum_{j \neq i} ^D \xi_j^\mu \xi_j^1\right)\right] = \xi_i^1
-    $$
+    $$\sigma_i^{(t+1)} = \textrm{Sign} \left[\xi_i^1 f(D-1) + \sum_{\mu = 2}^K \xi_i^\mu f\left(\sum_{j \neq i} ^D \xi_j^\mu \xi_j^1\right)\right] = \xi_i^1$$
     
-- The former term in the sign function can be denoted as the signal, while the latter can be denoted as the noise. This is equivalent to finding the probability that the noise is greater than $f(D-1)$, which (for error bound $\alpha$ sd’s) is $K^\textrm{max} = \frac{1}{\alpha^2 (2n-3)!!} D^{n-1}$. Hence, since $D$ is large, $K^\textrm{max}$ increases significantly with $n$ (that’s why Hopfield networks have low capacity)
+- The former term in the sign function can be denoted as the signal, while the latter can be denoted as the noise. This is equivalent to finding the probability that the noise is greater than $f(D-1)$, which (for error bound $\alpha$ sd’s) is 
+$$K^\textrm{max} = \frac{1}{\alpha^2 (2n-3)!!} D^{n-1}$$. Hence, since $D$ is large, $K^\textrm{max}$ increases significantly with $n$ (that’s why Hopfield networks have low capacity)
 
 first q & a:
 

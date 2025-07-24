@@ -29,7 +29,9 @@ so here's some stuff i did:
 - realized idk what kinda ML i want to do
 - doing some ML research!
 - trying my hand at figma
+- watched one piece
 - got a massive tooth infection
+- went to the ER
 - cooked my first dish
 - wrote 100k+ words in my journal
 - spent time with my girlfriend!

@@ -5,7 +5,7 @@ title: Writings
 
 <h1>writings</h1>
 
-<p>learning to write.</p>
+<p>making my thoughts permanent. i've populated this page with some recent entries in my journal, but they're not revised or written for others to consume.</p>
 
 <div class="writings-list">
   {% assign sorted_writings = site.writings | sort: 'date' | reverse %}
@@ -234,7 +234,9 @@ function loadWriting(url) {
         if (typeof renderMathInElement !== 'undefined') {
           renderMathInElement(document.getElementById('popup-body'), {
             delimiters: [
+                {left: "$", right: "$", display: false},
                 {left: "\\(", right: "\\)", display: false},
+                {left: "$$", right: "$$", display: true},
                 {left: "\\[", right: "\\]", display: true}
             ],
             throwOnError: false

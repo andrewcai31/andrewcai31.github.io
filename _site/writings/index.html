@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Writings - andrew cai</title>
     <meta name="description" content="my little website">
-    <link rel="canonical" href="http://localhost:4000/writings/">
+    <link rel="canonical" href="https://andrewc.ai/writings/">
     <link rel="alternate" type="application/rss+xml" title="andrew cai" href="/feed.xml">
     
     <!-- KaTeX for LaTeX math rendering -->
@@ -21,17 +21,17 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="my little website" />
 <meta property="og:description" content="my little website" />
-<link rel="canonical" href="http://localhost:4000/writings/" />
-<meta property="og:url" content="http://localhost:4000/writings/" />
+<link rel="canonical" href="https://andrewc.ai/writings/" />
+<meta property="og:url" content="https://andrewc.ai/writings/" />
 <meta property="og:site_name" content="andrew cai" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Writings" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"andrew cai"},"description":"my little website","headline":"Writings","url":"http://localhost:4000/writings/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"andrew cai"},"description":"my little website","headline":"Writings","url":"https://andrewc.ai/writings/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="andrew cai" />
+    <link type="application/atom+xml" rel="alternate" href="https://andrewc.ai/feed.xml" title="andrew cai" />
 </head>
 <body>
     <div class="container">
@@ -47,7 +47,7 @@
         <main>
             <h1>writings</h1>
 
-<p>This is where I'll share my thoughts and writings.</p>
+<p>making my thoughts permanent. i've populated this page with some recent entries in my journal, but they're not revised or written for others to consume.</p>
 
 <div class="writings-list">
   
@@ -62,18 +62,23 @@
       <ul>
         
         <li>
-          <span class="writing-date">1/25/25:</span>
-          <a href="#" class="writing-link" data-url="/writings/third-post/">Learning New Things</a>
+          <span class="writing-date">7/24/25:</span>
+          <a href="#" class="writing-link" data-url="/writings/gap-year-side-quests/">gap year side quests</a>
         </li>
         
         <li>
-          <span class="writing-date">1/20/25:</span>
-          <a href="#" class="writing-link" data-url="/writings/second-post/">Thoughts on Technology</a>
+          <span class="writing-date">7/19/25:</span>
+          <a href="#" class="writing-link" data-url="/writings/living-slow/">living slow</a>
         </li>
         
         <li>
-          <span class="writing-date">1/15/25:</span>
-          <a href="#" class="writing-link" data-url="/writings/first-post/">My First Post</a>
+          <span class="writing-date">7/14/25:</span>
+          <a href="#" class="writing-link" data-url="/writings/associative-memory/">some notes on an associative memory lecture</a>
+        </li>
+        
+        <li>
+          <span class="writing-date">3/21/25:</span>
+          <a href="#" class="writing-link" data-url="/writings/influence-functions/">influence functions</a>
         </li>
         
       </ul>
@@ -286,7 +291,9 @@ function loadWriting(url) {
         if (typeof renderMathInElement !== 'undefined') {
           renderMathInElement(document.getElementById('popup-body'), {
             delimiters: [
+                {left: "$", right: "$", display: false},
                 {left: "\\(", right: "\\)", display: false},
+                {left: "$$", right: "$$", display: true},
                 {left: "\\[", right: "\\]", display: true}
             ],
             throwOnError: false
@@ -339,7 +346,9 @@ document.addEventListener('keydown', function(e) {
         document.addEventListener("DOMContentLoaded", function() {
             renderMathInElement(document.body, {
                 delimiters: [
+                    {left: "$", right: "$", display: false},
                     {left: "\\(", right: "\\)", display: false},
+                    {left: "$$", right: "$$", display: true},
                     {left: "\\[", right: "\\]", display: true}
                 ],
                 throwOnError: false

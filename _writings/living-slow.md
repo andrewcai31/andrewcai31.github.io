@@ -6,7 +6,7 @@ date: 2025-07-19
 
 i want to live slow. i want to have not many sources of stress, attention, distraction, etc. i want to spend my days walking outside in peace, hanging out casually with a few friends, going to work, working out, being at home. i want consistency. i want to pursue my hobbies and health.
 
-maybe new york’s not the spot for that lol. though that's my own perception and problem- it's difficult for me to resist the urge to socialize / party a ton. new york forces you to live fast, and sometimes i live too fast for my own sake.
+maybe new york’s not the spot for that lol. though that's my own perception and problem- it's difficult for me to resist the urge to socialize / party a ton. new york forces you to live fast, and sometimes i live too fast for my own sake. but i have self-agency and i can exercise it!
 
 living slow helps me focus on the person i am acting like, and make sure that is equivalent to the person i want to be. sometimes when i live too fast i become attached to my own ego or selfishness. i don’t like that. or i’m not in tune with my thoughts or health. 
 

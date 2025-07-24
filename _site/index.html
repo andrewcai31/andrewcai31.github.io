@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home - andrew cai</title>
     <meta name="description" content="my little website">
-    <link rel="canonical" href="http://localhost:4000/">
+    <link rel="canonical" href="https://andrewc.ai/">
     <link rel="alternate" type="application/rss+xml" title="andrew cai" href="/feed.xml">
     
     <!-- KaTeX for LaTeX math rendering -->
@@ -21,17 +21,17 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="my little website" />
 <meta property="og:description" content="my little website" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="https://andrewc.ai/" />
+<meta property="og:url" content="https://andrewc.ai/" />
 <meta property="og:site_name" content="andrew cai" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Home" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"andrew cai"},"description":"my little website","headline":"Home","name":"andrew cai","url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"andrew cai"},"description":"my little website","headline":"Home","name":"andrew cai","url":"https://andrewc.ai/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="andrew cai" />
+    <link type="application/atom+xml" rel="alternate" href="https://andrewc.ai/feed.xml" title="andrew cai" />
 </head>
 <body>
     <div class="container">
@@ -45,11 +45,11 @@
         </header>
         
         <main>
-            <h1>andrew cai</h1>
+            <h1>about me</h1>
 
 <p>hey. i just graduated from MIT. i like ML, thrifted jackets, and looking at tall buildings. 
     
-email me at andrewcai31@gmail.com, let's chat (i love chatting)! </p>
+email me at andrewcai31@gmail.com, let's chat (i love chatting)!</p>
 
 <h2>Sections</h2>
 
@@ -70,7 +70,9 @@ email me at andrewcai31@gmail.com, let's chat (i love chatting)! </p>
         document.addEventListener("DOMContentLoaded", function() {
             renderMathInElement(document.body, {
                 delimiters: [
+                    {left: "$", right: "$", display: false},
                     {left: "\\(", right: "\\)", display: false},
+                    {left: "$$", right: "$$", display: true},
                     {left: "\\[", right: "\\]", display: true}
                 ],
                 throwOnError: false
