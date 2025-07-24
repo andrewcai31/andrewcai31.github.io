@@ -34,18 +34,23 @@ so here's some stuff i did:
 - went to the ER
 - cooked my first dish
 - wrote 100k+ words in my journal
-- spent time with my girlfriend!
-- read a LOT of short-form content
+- 1 year anniversary with my girlfriend!
+- read an inordinate amount of short-form content
 - dyed my hair silver
+- lived in san francisco for three months
 - saw mt. kilimanjaro
+- crazy story pt. 4 (iykyk)
 - played with my dog
 - not lose my fantasy football league
 - way too much brainrot (for a few months)
 - developed strong anti-social media feelings
-- walked up and down new york city
+- walked up and down new york city (from fidi to astoria)
 - bought an amen thompson jersey
 - went to ICML
+- gave my senior speech
 - hit 1.25m on nes tetris
+- did PT for my knee
+- worked on a single codeforces problem for 16 hours straight
 - spent a lot of time with old friends
 - made many new friends
 - cried tears of sorrow and tears of joy
