@@ -88,7 +88,7 @@ we have the problems of adding hierarchy:
 
 here’s the solution, the HAMUX framework:
 
-![HAMUX framework diagram](/assets/images/hamux-framework.png)
+<img src="/assets/images/writings/hamux-framework.png" alt="HAMUX framework diagram" style="width: 70%; max-width: 600px; height: auto; display: block; margin: 20px auto;">
 
 let’s build networks using HAMUX:
 

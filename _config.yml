@@ -44,7 +44,7 @@ exclude:
 
 # Kramdown settings for LaTeX support
 kramdown:
-  math_engine: katex
+  math_engine: null
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
